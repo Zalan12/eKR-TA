@@ -10,9 +10,15 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
+<<<<<<< HEAD
                   Height="600"
                   SelectionChanged="datagridUsers_SelectionChanged"
                   Width="1100">
+=======
+                  Height="500"
+                  SelectionChanged="datagridUsers_SelectionChanged"
+                  Width="750">
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID"
                                     Binding="{Binding Id}"></DataGridTextColumn>
@@ -20,8 +26,11 @@
                                     Binding="{Binding FelhasznaloNev}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Teljes név:"
                                     Binding="{Binding TeljesNev}"></DataGridTextColumn>
+<<<<<<< HEAD
                 <DataGridTextColumn Header="Jelszó:"
                                     Binding="{Binding Jelszo}"></DataGridTextColumn>
+=======
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             </DataGrid.Columns>
         </DataGrid>
         <WrapPanel VerticalAlignment="Center"
@@ -31,8 +40,11 @@
                 <TextBox x:Name="usernameTextBox"></TextBox>
                 <TextBlock Text="Teljes név: "></TextBlock>
                 <TextBox x:Name="fullnameTextBox"></TextBox>
+<<<<<<< HEAD
                 <TextBlock Text="Jelszó: "></TextBlock>
                 <PasswordBox x:Name="passwordBox" />
+=======
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             </StackPanel>
             <StackPanel>
                 <Button Width="200"

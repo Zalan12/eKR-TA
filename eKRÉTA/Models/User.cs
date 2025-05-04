@@ -10,10 +10,15 @@ namespace eKRÉTA.Models
 {
     public class User
     {
+<<<<<<< HEAD
+=======
+
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FelhasznaloNev { get; set; }
         public string TeljesNev { get; set; }
+<<<<<<< HEAD
         public string Jelszo { get; set; }
 
         public User()
@@ -32,5 +37,8 @@ namespace eKRÉTA.Models
             TeljesNev = teljesNev;
             Jelszo = jelszo;
         }
+=======
+
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
     }
 }

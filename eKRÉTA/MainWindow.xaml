@@ -9,7 +9,11 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow"
+<<<<<<< HEAD
         Height="900"
+=======
+        Height="800"
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
         Width="1000">
     <Window.Resources>
         <ResourceDictionary>

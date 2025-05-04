@@ -25,8 +25,11 @@ namespace eKRÉTA.UserControls
         {
             fullnameTextBox.Text = "";
             usernameTextBox.Text = "";
+<<<<<<< HEAD
             //NEW!
             passwordBox.Password = "";
+=======
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
 
             using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
             {
@@ -37,6 +40,10 @@ namespace eKRÉTA.UserControls
                     datagridUsers.ItemsSource = query;
                 }
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             saveBtn.Visibility = Visibility.Visible;
             modBtn.Visibility = Visibility.Hidden;
             deleteBtn.Visibility = Visibility.Hidden;
@@ -44,9 +51,17 @@ namespace eKRÉTA.UserControls
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             //MODIFIED
             User user = new User(usernameTextBox.Text, fullnameTextBox.Text, PasswordHelper.HashPassword(passwordBox.Password));
 
+=======
+            User user = new User()
+            {
+                FelhasznaloNev = usernameTextBox.Text,
+                TeljesNev = fullnameTextBox.Text
+            };
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
             {
                 sQLiteConnection.CreateTable<User>();
@@ -63,7 +78,12 @@ namespace eKRÉTA.UserControls
                 sQLiteConnection.Delete(selectedUser);
             }
             ReadDatabase();
+<<<<<<< HEAD
 
+=======
+            //selectedUser = null;
+            //datagridUsers.SelectedItem = null;
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
         }
 
         private void datagridUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -85,6 +105,7 @@ namespace eKRÉTA.UserControls
             selectedUser.FelhasznaloNev = usernameTextBox.Text;
             selectedUser.TeljesNev = fullnameTextBox.Text;
 
+<<<<<<< HEAD
             // NEW!
             if (passwordBox.Password != "")
             {
@@ -92,6 +113,8 @@ namespace eKRÉTA.UserControls
             }
 
 
+=======
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
             using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
             {
                 sQLiteConnection.CreateTable<User>();
@@ -99,9 +122,15 @@ namespace eKRÉTA.UserControls
             }
 
             ReadDatabase();
+<<<<<<< HEAD
 
         }
 
 
+=======
+            //selectedUser = null;
+            //datagridUsers.SelectedItem = null;
+        }
+>>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
     }
 }
