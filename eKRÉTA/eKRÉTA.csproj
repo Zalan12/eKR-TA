@@ -1,8 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-<<<<<<< HEAD
-=======
-
->>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
@@ -10,15 +6,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
-  </ItemGroup>
-=======
-
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
   </ItemGroup>
 
->>>>>>> f1cc206cb3198b051357d65727294d835ce402c8
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+  </ItemGroup>
 </Project>
