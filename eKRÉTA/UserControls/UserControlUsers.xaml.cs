@@ -15,10 +15,29 @@ namespace eKRÉTA.UserControls
         {
             InitializeComponent();
             users = new List<User>();
+            //Test();
             ReadDatabase();
+
             saveBtn.Visibility = Visibility.Visible;
             modBtn.Visibility = Visibility.Hidden;
             deleteBtn.Visibility = Visibility.Hidden;
+        }
+
+        private void Test()
+        {
+            var userRepo = new GenericRepository<User>(App.databasePath);
+
+            // Adatok lekérdezése
+            var users = userRepo.GetAll();
+
+            // Új beszúrás
+            //userRepo.Insert(new User(...));
+
+            // Módosítás
+            //userRepo.Update(selectedUser);
+
+            // Törlés
+            //userRepo.Delete(selectedUser);
         }
 
         private void ReadDatabase()
@@ -28,15 +47,21 @@ namespace eKRÉTA.UserControls
             //NEW!
             passwordBox.Password = "";
 
-            using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
-            {
-                sQLiteConnection.CreateTable<User>();
-                var query = sQLiteConnection.Table<User>().ToList();
-                if (query != null)
-                {
-                    datagridUsers.ItemsSource = query;
-                }
-            }
+
+            //NEW2 generic CRUD 
+            var userRepo = new GenericRepository<User>(App.databasePath);
+            var users = userRepo.GetAll();
+            datagridUsers.ItemsSource = users;
+
+            //using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
+            //{
+            //    sQLiteConnection.CreateTable<User>();
+            //    var query = sQLiteConnection.Table<User>().ToList();
+            //    if (query != null)
+            //    {
+            //        datagridUsers.ItemsSource = query;
+            //    }
+            //}
             saveBtn.Visibility = Visibility.Visible;
             modBtn.Visibility = Visibility.Hidden;
             deleteBtn.Visibility = Visibility.Hidden;
@@ -52,21 +77,31 @@ namespace eKRÉTA.UserControls
             //    FelhasznaloNev = usernameTextBox.Text,
             //    TeljesNev = fullnameTextBox.Text
             //};
-            using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
-            {
-                sQLiteConnection.CreateTable<User>();
-                sQLiteConnection.Insert(user);
-            }
+
+
+            //NEW2 generic CRUD 
+            var userRepo = new GenericRepository<User>(App.databasePath);
+            userRepo.Insert(user);
+
+            //using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
+            //{
+            //    sQLiteConnection.CreateTable<User>();
+            //    sQLiteConnection.Insert(user);
+            //}
             ReadDatabase();
         }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
-            {
-                sQLiteConnection.CreateTable<User>();
-                sQLiteConnection.Delete(selectedUser);
-            }
+            // NEW 2 generic CRUD
+            var userRepo = new GenericRepository<User>(App.databasePath);
+            userRepo.Delete(selectedUser);
+
+            //using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
+            //{
+            //    sQLiteConnection.CreateTable<User>();
+            //    sQLiteConnection.Delete(selectedUser);
+            //}
             ReadDatabase();
 
         }
@@ -96,12 +131,15 @@ namespace eKRÉTA.UserControls
                 selectedUser.Jelszo = PasswordHelper.HashPassword(passwordBox.Password);
             }
 
+            //NEW2 generic CRUD
+            var userRepo = new GenericRepository<User>(App.databasePath);
+            userRepo.Update(selectedUser);
 
-            using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
-            {
-                sQLiteConnection.CreateTable<User>();
-                sQLiteConnection.Update(selectedUser);
-            }
+            //using (SQLite.SQLiteConnection sQLiteConnection = new SQLite.SQLiteConnection(App.databasePath))
+            //{
+            //    sQLiteConnection.CreateTable<User>();
+            //    sQLiteConnection.Update(selectedUser);
+            //}
 
             ReadDatabase();
 

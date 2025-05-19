@@ -6,19 +6,52 @@
              xmlns:local="clr-namespace:eKRÉTA.UserControls"
              mc:Ignorable="d">
     <StackPanel>
+        <StackPanel Background="LightGray">
+            <Label>Vezetéknév:</Label>
+            <TextBox x:Name="vnev"></TextBox>
+            <Label>Utónév:</Label>
+            <TextBox x:Name="unev"></TextBox>
+            <Label>Születési dátum:</Label>
+            <TextBox x:Name="szuldate"></TextBox>
+            <Label>Anyja neve:</Label>
+            <TextBox x:Name="anev"></TextBox>
+            <Label>Lakcím:</Label>
+            <TextBox x:Name="cim"></TextBox>
+            <WrapPanel>
+           <Button x:Name="studentSave" Click="studentSave_Click" Width="100" Height="30" Content="Mentés"></Button>
+            <Button x:Name="studentUpdate"
+            Background="Yellow"
+                    Click="studentSave_Click"
+                    Width="100"
+                    Height="30"
+                    Content="Módosítás"></Button>
+            <Button x:Name="studentDelete"
+            Background="Red"
+                    Click="studentSave_Click"
+                    Width="100"
+                    Height="30"
+                    Foreground="White"
+                        Content="Törlés"></Button>
+            </WrapPanel>
+        </StackPanel>
         <DataGrid x:Name="datagridStudents"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
-                  Height="500"
+                  Height="300"
                   Width="750">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID"></DataGridTextColumn>
-                <DataGridTextColumn Header="Vezeték név:"></DataGridTextColumn>
-                <DataGridTextColumn Header="Utónév:"></DataGridTextColumn>
-                <DataGridTextColumn Header="Születési dátum:"></DataGridTextColumn>
-                <DataGridTextColumn Header="Anyja neve:"></DataGridTextColumn>
-                <DataGridTextColumn Header="Lakcím:"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Vezetéknév:"
+                                    Binding="{Binding VezNev}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Utónév:"
+                                    Binding="{Binding UtoNev}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Születési dátum:"
+                                    Binding="{Binding SzulDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Anyja neve:"
+                                    Binding="{Binding AnyjaNeve}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Lakcím:"
+                                    Binding="{Binding Lakcim}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

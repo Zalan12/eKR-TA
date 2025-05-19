@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace eKRÉTA.Models
 {
-    internal class Student
+    internal class Teacher
     {
-        public Student()
+        public Teacher()
         {
         }
-
-        
 
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string VezNev { get; set; }
         public string UtoNev { get; set; }
-        public string SzulDate { get; set; }
-        public string AnyjaNeve { get; set; }
-        public string Lakcim { get; set; }
-        public int OsztalyokID { get; set}
+        public int OsztalyId { get; set; }
+        public bool KedvesE { get; set; }
+
+
 
 
 

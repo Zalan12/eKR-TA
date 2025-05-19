@@ -14,9 +14,13 @@
         d:DesignHeight="500"
         d:DesignWidth="400">
     <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="Images/hatter.png"
+                        Stretch="Uniform" />
+        </StackPanel.Background>
         <StackPanel Margin="0,50,0,100"
                     HorizontalAlignment="Center">
-            <TextBlock>Ez egy cím</TextBlock>
+            <TextBlock>Temu-s eKréta</TextBlock>
         </StackPanel>
         <StackPanel>
             <TextBlock>Felhasználónév:</TextBlock>
